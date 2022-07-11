@@ -20,6 +20,9 @@ function getDatabaseUri() {
 // Speed up bcrypt for tests when security isn't important
 const BCRYPT_WORK_FACTOR = IS_TESTING ? 4 : 13
 
+// Export secret key for JWT
+const SECRET_KEY = process.env.SECRET_KEY || "secret_dev"
+
 console.log("Auth Starter Config:".red)
 console.log("PORT:".blue, PORT)
 console.log("IS_TESTING:".blue, IS_TESTING)
@@ -32,4 +35,5 @@ module.exports = {
   IS_TESTING,
   BCRYPT_WORK_FACTOR,
   getDatabaseUri,
+  SECRET_KEY,
 }
